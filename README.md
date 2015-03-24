@@ -7,13 +7,20 @@ You don't need this source code unless you want to modify the gem. If
 you just want to use the Checkr Ruby bindings, you should run:
 
 ```bash
-gem install checkr
+gem install checkr-official
 ```
 
 If you want to build the gem from source:
 
 ```bash
-gem build checkr.gemspec
+gem build checkr-official.gemspec
+```
+
+
+If you want to include teh gem in IRB you will need to require `checkr`. This naming will hopefully be cleared up if we are given ownership of the `checkr` gem on rubygems.
+
+```ruby
+require 'checkr'
 ```
 
 
@@ -40,7 +47,7 @@ rubygems source in your Gemfile, as any gems fetched over http could potentially
 source 'https://rubygems.org'
 
 gem 'rails'
-gem 'checkr'
+gem 'checkr-official'
 ```
 
 
