@@ -17,7 +17,7 @@ gem build checkr-official.gemspec
 ```
 
 
-If you want to include teh gem in IRB you will need to require `checkr`. This naming will hopefully be cleared up if we are given ownership of the `checkr` gem on rubygems.
+If you want to include the gem in IRB you will need to require `checkr`. This naming will hopefully be cleared up if we are given ownership of the `checkr` gem on rubygems.
 
 ```ruby
 require 'checkr'
