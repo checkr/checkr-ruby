@@ -84,6 +84,7 @@ module Checkr
        :ssn_trace_id=>"539fd88c101897f7cd000001",
        :sex_offender_search_id=>"539fd88c101897f7cd000008",
        :national_criminal_search_id=>"539fd88c101897f7cd000006",
+       :terrorist_watchlist_search_id=>"53f11ec23934620002010000",
        :county_criminal_search_ids=>
         ["539fdcf335644a0ef4000001", "532e71cfe88a1d4e8d00000i"],
        :motor_vehicle_report_id=>"539fd88c101897f7cd000007"}
