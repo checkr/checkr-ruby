@@ -94,12 +94,7 @@ module Checkr
       raise APIError.generic(response.code, response.body)
     end
 
-    # TODO(jonclahoun): Remove this when Checkr's API returns the correct status code.
     json = Util.symbolize_keys(json)
-    if json.has_key?(:error)
-      raise CheckrError.new(json[:error][:message], response.code, response.body, json)
-    end
-
     json
   end
 
