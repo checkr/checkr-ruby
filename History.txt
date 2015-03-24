@@ -1,3 +1,7 @@
+=== 1.0.1 2015-03-24
+* 1 minor enchancement:
+  * Updated documents class to feel like other classes.
+
 === 1.0 2015-03-04
 
 * 1 major enhancement:
