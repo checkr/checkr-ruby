@@ -11,18 +11,23 @@ module Checkr
       should 'be createable' do
         new_doc = {
           :type => "driver_license",
-          :file => "fake_file"
+          :file => "fake_file",
+          :candidate_id => @candidate.id
         }
         @mock.expects(:post).once.with(@document_url, anything, new_doc).returns(test_response(test_document))
-        document = @candidate.documents.create(new_doc)
+        document = Checkr::Document.create(new_doc)
         assert(document.is_a?(Document))
         assert_equal(test_document[:id], document.id)
       end
 
       should 'be listable' do
-        @mock.expects(:get).once.with(@document_url, anything, anything).returns(test_response(test_document_list))
+        @mock.expects(:get).once.with do |url, params, opts|
+          url.start_with?(@document_url)
+        end.returns(test_response(test_document_list))
 
-        documents = @candidate.documents.all
+        documents = Checkr::Document.all({
+          :candidate_id => @candidate.id
+        })
 
         assert(documents.is_a?(DocumentList))
         documents.each do |document|

@@ -157,11 +157,15 @@ module Checkr
 
     def inspect
       id_string = (self.respond_to?(:id) && !self.id.nil?) ? " id=#{self.id}" : ""
-      "#<#{self.class}:0x#{self.object_id.to_s(16)}#{id_string}> JSON: " + JSON.pretty_generate(json)
+      "#<#{self.class}:0x#{self.object_id.to_s(16)}#{id_string}> JSON: " + JSON.pretty_generate(attributes)
+    end
+
+    def to_s(*args)
+      JSON.pretty_generate(non_nil_attributes)
     end
 
     def to_json(*a)
-      JSON.generate(json)
+      JSON.generate(non_nil_attributes)
     end
 
 
@@ -240,7 +244,7 @@ module Checkr
 
         validate_args(arg_names, *args)
         arguments = compose_arguments(method, arg_names, *args)
-        composed_path = compose_api_path(path, arguments)
+        composed_path = compose_api_path(path, arguments, arguments[:params])
         unused_args = determine_unused_args(path, arg_names, arguments)
         arguments[:params] = compose_params(arguments[:params], unused_args, default_params)
 
@@ -336,7 +340,7 @@ module Checkr
       self.class.compose_arguments(method, arg_names, *args)
     end
 
-    def self.compose_api_path(path, arguments, this=self)
+    def self.compose_api_path(path, arguments, params={}, this=self)
       # Setup the path using the following attribute order:
       #   1. Args passed in
       #   2. Args on this
@@ -347,6 +351,7 @@ module Checkr
         matches = ret.scan(/:([^\/]*)/).flatten.map(&:to_sym)
         matches.each do |match|
           value = arguments[match]
+          value ||= params[match] || params[match.to_s]
           begin
             value ||= this.send(match)
           rescue NoMethodError
@@ -369,8 +374,8 @@ module Checkr
       end
       ret
     end
-    def compose_api_path(path, arguments)
-      self.class.compose_api_path(path, arguments, self)
+    def compose_api_path(path, arguments, params={})
+      self.class.compose_api_path(path, arguments, params, self)
     end
 
     def self.determine_unused_args(path, arg_names, arguments, this=self)
