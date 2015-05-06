@@ -13,6 +13,9 @@ module Checkr
     attribute :ssn_trace, :SSNTrace
     attribute_writer_alias :ssn_trace_id, :ssn_trace
 
+    attribute :eviction_search, :EvictionSearch
+    attribute_writer_alias :eviction_search_id, :eviction_search
+
     attribute :sex_offender_search, :SexOffenderSearch
     attribute_writer_alias :sex_offender_search_id, :sex_offender_search
 

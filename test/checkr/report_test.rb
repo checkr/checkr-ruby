@@ -118,6 +118,11 @@ module Checkr
         assert(@report.motor_vehicle_report.is_a?(MotorVehicleReport))
       end
 
+      should 'have the eviction_search_id attribute' do
+        assert_equal(test_report[:eviction_search_id], @report.eviction_search.id)
+        assert(@report.eviction_search.is_a?(EvictionSearch))
+      end
+
     end
 
     should 'be registered' do
