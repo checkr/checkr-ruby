@@ -87,7 +87,8 @@ module Checkr
        :terrorist_watchlist_search_id=>"53f11ec23934620002010000",
        :county_criminal_search_ids=>
         ["539fdcf335644a0ef4000001", "532e71cfe88a1d4e8d00000i"],
-       :motor_vehicle_report_id=>"539fd88c101897f7cd000007"}
+       :motor_vehicle_report_id=>"539fd88c101897f7cd000007",
+     	 :eviction_search_id=>"539fd88c101897f7cd000008"}
     end
 
     def test_report_list
@@ -364,6 +365,33 @@ module Checkr
           :state_code=>nil,
           :docket=>nil,
           :additional_info=>nil}]}
+    end
+
+    def test_eviction_search
+      { :id => "539fd88c101897f7cd000008",
+        :object => "eviction",
+        :uri => "/v1/evictions/539fd88c101897f7cd000008",
+        :status => "consider",
+        :created_at => "2014-01-18T12:34:00Z",
+        :completed_at => "2014-01-18T12:35:30Z",
+        :turnaround_time => 90,
+        :records =>
+        [{
+          :case_number => "24323-DA",
+          :file_date => "2013-10-08",
+          :court_jurisdiction => "San Francisco",
+          :full_name => "John Alfred Smith",
+          :judgement_amount => 1500,
+          :plaintiff => "Roger Peterson",
+          :offense => "Non payment",
+          :address => {
+            :street => "123 S Folsom St",
+            :unit => nil,
+            :city => "San Francisco",
+            :state => "CA",
+            :zipcode => "94110"
+          }
+        }]}
     end
 
     def test_document
