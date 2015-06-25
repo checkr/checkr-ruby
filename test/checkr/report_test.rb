@@ -113,6 +113,11 @@ module Checkr
         assert(@report.county_criminal_searches.is_a?(APIList))
       end
 
+      should 'have the documents attribute' do
+          assert_equal(test_report[:document_ids], @report.documents.json)
+          assert(@report.documents.is_a?(APIList))
+      end
+
       should 'have the motor_vehicle_report_id attribute' do
         assert_equal(test_report[:motor_vehicle_report_id], @report.motor_vehicle_report.id)
         assert(@report.motor_vehicle_report.is_a?(MotorVehicleReport))

@@ -31,6 +31,8 @@ module Checkr
     attribute :motor_vehicle_report, :MotorVehicleReport
     attribute_writer_alias :motor_vehicle_report_id, :motor_vehicle_report
 
+    attribute :documents, APIList.constructor(:Document)
+    attribute_writer_alias :document_ids, :documents
 
     api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
     api_class_method :create, :post
