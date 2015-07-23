@@ -369,7 +369,7 @@ module Checkr
         end
 
         unless missing.empty?
-          raise InvalidRequestError.new("Could not determine the full URL to request. Missing the following values: #{missing.to_a.join(', ')}.")
+          raise InvalidRequestError.new("Could not determine the full URL to request. Missing the following values: #{missing.to_a.join(', ')}.", "url")
         end
       end
       ret
