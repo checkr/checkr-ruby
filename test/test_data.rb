@@ -175,7 +175,6 @@ module Checkr
           :registration_start=>"2011-02-12",
           :registration_end=>"life registration",
           :photo=>"http://goo.gl/wk4X6f",
-          :additional_info=>nil,
           :charges=>
            [{:charge=>"Sexual Assault Statute: 948.02(2)",
              :victim=>"Child",
@@ -200,7 +199,6 @@ module Checkr
           :court_of_record=>nil,
           :dob=>"1970-01-22",
           :full_name=>"John Alfred Smith",
-          :additional_info=>nil,
           :charges=>
            [{:charge=>"RICO murder",
              :charge_type=>nil,
@@ -211,15 +209,13 @@ module Checkr
              :plaintiff=>nil,
              :sentence=>"Active Punishment Minimum: 10Y",
              :disposition=>"Guilty",
-             :notes=>nil,
              :probation_status=>nil,
              :offense_date=>"2011-04-22",
              :deposition_date=>"2014-05-27",
              :arrest_date=>nil,
              :charge_date=>nil,
              :sentence_date=>nil,
-             :disposition_date=>"2011-06-02",
-             :additional_info=>nil}]}]}
+             :disposition_date=>"2011-06-02"}]}]}
     end
 
     def test_national_criminal_search
@@ -238,7 +234,6 @@ module Checkr
           :court_of_record=>nil,
           :dob=>"1970-01-22",
           :full_name=>"John Alfred Smith",
-          :additional_info=>nil,
           :charges=>
            [{:charge=>"Sell Cocaine",
              :charge_type=>nil,
@@ -249,15 +244,13 @@ module Checkr
              :plaintiff=>nil,
              :sentence=>"Active Punishment Minimum: 10M",
              :disposition=>"Guilty",
-             :notes=>"CREDIT FOR TIME SERVED: 41D DA",
              :probation_status=>nil,
              :offense_date=>"2011-04-22",
              :deposition_date=>"2014-05-27",
              :arrest_date=>nil,
              :charge_date=>nil,
              :sentence_date=>nil,
-             :disposition_date=>"2011-06-02",
-             :additional_info=>nil}]}]}
+             :disposition_date=>"2011-06-02"}]}]}
     end
 
     def test_county_criminal_search
@@ -278,7 +271,6 @@ module Checkr
           :court_of_record=>nil,
           :dob=>"1970-01-22",
           :full_name=>"John Alfred Smith",
-          :additional_info=>nil,
           :charges=>
            [{:charge=>"Sell Cocaine",
              :charge_type=>nil,
@@ -289,15 +281,13 @@ module Checkr
              :plaintiff=>nil,
              :sentence=>"Active Punishment Minimum: 10M",
              :disposition=>"Guilty",
-             :notes=>"CREDIT FOR TIME SERVED: 41D DA",
              :probation_status=>nil,
              :offense_date=>"2011-04-22",
              :deposition_date=>"2014-05-27",
              :arrest_date=>"2011-04-22",
              :charge_date=>nil,
              :sentence_date=>"2011-06-02",
-             :disposition_date=>"2011-06-02",
-             :additional_info=>nil}]}]}
+             :disposition_date=>"2011-06-02"}]}]}
     end
 
     def test_motor_vehicle_report
@@ -339,7 +329,6 @@ module Checkr
           :fine_amount=>nil,
           :acd_code=>nil,
           :state_code=>nil,
-          :additional_info=>nil,
           :injury_accident=>false,
           :fatality_accident=>false,
           :fatality_count=>0,
@@ -363,8 +352,7 @@ module Checkr
           :court_name=>nil,
           :acd_code=>nil,
           :state_code=>nil,
-          :docket=>nil,
-          :additional_info=>nil}]}
+          :docket=>nil}]}
     end
 
     def test_eviction_search
