@@ -18,7 +18,6 @@
       "court_of_record": null,
       "dob": "1970-01-22",
       "full_name": "John Alfred Smith",
-      "additional_info": null,
       "charges": [
         {
           "charge": "RICO murder",
@@ -30,15 +29,13 @@
           "plaintiff": null,
           "sentence": "Active Punishment Minimum: 10Y",
           "disposition": "Guilty",
-          "notes": null,
           "probation_status": null,
           "offense_date": "2011-04-22",
           "deposition_date": "2014-05-27",
           "arrest_date": null,
           "charge_date": null,
           "sentence_date": null,
-          "disposition_date": "2011-06-02",
-          "additional_info": null
+          "disposition_date": "2011-06-02"
         }
       ]
     }
@@ -85,7 +82,6 @@ tws = Checkr::TerroristWatchlistSearch.retrieve("539fd88c101897f7cd000008")
       "court_of_record": null,
       "dob": "1970-01-22",
       "full_name": "John Alfred Smith",
-      "additional_info": null,
       "charges": [
         {
           "charge": "RICO murder",
@@ -97,15 +93,13 @@ tws = Checkr::TerroristWatchlistSearch.retrieve("539fd88c101897f7cd000008")
           "plaintiff": null,
           "sentence": "Active Punishment Minimum: 10Y",
           "disposition": "Guilty",
-          "notes": null,
           "probation_status": null,
           "offense_date": "2011-04-22",
           "deposition_date": "2014-05-27",
           "arrest_date": null,
           "charge_date": null,
           "sentence_date": null,
-          "disposition_date": "2011-06-02",
-          "additional_info": null
+          "disposition_date": "2011-06-02"
         }
       ]
     }

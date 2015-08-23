@@ -43,7 +43,6 @@
       "fine_amount": null,
       "acd_code": null,
       "state_code": null,
-      "additional_info": null,
       "injury_accident": false,
       "fatality_accident": false,
       "fatality_count": 0,
@@ -70,8 +69,7 @@
       "court_name": null,
       "acd_code": null,
       "state_code": null,
-      "docket": null,
-      "additional_info": null
+      "docket": null
     }
   ],
   "id": "539fd88c101897f7cd000007",
