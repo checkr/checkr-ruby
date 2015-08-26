@@ -1,3 +1,7 @@
+=== 1.0.2 2015-03-24
+* 1 minor enchancement:
+  * Fixed a bug with Util.constantize
+
 === 1.0.1 2015-03-24
 * 1 minor enchancement:
   * Updated documents class to feel like other classes.

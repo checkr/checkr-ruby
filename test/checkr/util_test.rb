@@ -1,6 +1,10 @@
 require File.expand_path('../../test_helper', __FILE__)
 
+class TestObj; end
+
 module Checkr
+  class TestObj; end
+
   class UtilTest < Test::Unit::TestCase
     should "symbolize_keys should convert keys to symbols" do
       start = {
@@ -45,6 +49,11 @@ module Checkr
       finish = ["a[]=1", "a[]=2"]
 
       assert_equal(finish, Util.query_array(start))
+    end
+
+    should 'scope the class in the Checkr namespace' do
+      assert_not_equal(::TestObj, Util.constantize(:TestObj))
+      assert_equal(Checkr::TestObj, Util.constantize(:TestObj))
     end
   end
 end
