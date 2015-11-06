@@ -139,6 +139,57 @@ candidate = Checkr::Candidate.retrieve("e44aa283528e6fde7d542194")
 ```
 
 
+## Update an existing Candidate
+
+### Definition
+
+```ruby
+candidate = Checkr::Candidate.retrieve({CANDIDATE_ID})
+candidate.copy_requested = {BOOL}
+candidate.save
+```
+
+### Example Request
+
+```ruby
+require 'checkr' # Note the gem is named checkr-official
+Checkr.api_key = "83ebeabdec09f6670863766f792ead24d61fe3f9"
+
+candidate = Checkr::Candidate.retrieve("e44aa283528e6fde7d542194")
+candidate.copy_requested = true
+candidate.save
+```
+
+### Example Response
+
+```ruby
+#<Checkr::Candidate:0x3fd909a22584 id=e44aa283528e6fde7d542194> JSON: {
+  "first_name": "John",
+  "middle_name": "Alfred",
+  "last_name": "Smith",
+  "email": "john.smith@gmail.com",
+  "phone": null,
+  "zipcode": "90401",
+  "dob": "1970-01-22",
+  "ssn": "XXX-XX-4645",
+  "driver_license_number": "F211165",
+  "driver_license_state": "CA",
+  "previous_driver_license_number": null,
+  "previous_driver_license_state": null,
+  "copy_requested": true,
+  "custom_id": null,
+  "reports": {"object":"list","data":[{"id":"4722c07dd9a10c3985ae432a"}, ...]},
+  "geos": {"object":"list","data":[]},
+  "adjudication": null,
+  "documents": {"object":"list","data":[]},
+  "id": "e44aa283528e6fde7d542194",
+  "object": "test_candidate",
+  "uri": "/v1/candidates/e44aa283528e6fde7d542194",
+  "created_at": "2014-06-17T05:55:47Z"
+}
+```
+
+
 ## List existing Candidates
 
 ### Definition
