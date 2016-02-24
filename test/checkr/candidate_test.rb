@@ -41,6 +41,19 @@ module Checkr
         assert_equal(test_candidate[:email], candidate.email)
       end
 
+      should 'be updateable' do
+        candidate = Candidate.new(test_candidate)
+        candidate.copy_requested = true
+
+        @mock.expects(:post).once.with do |url, headers, params|
+          params == candidate.changed_attributes && url == "#{@candidate_url}/#{candidate.id}"
+        end.returns(test_response(test_candidate))
+
+        # This should update this instance with test_candidate since it was returned
+        candidate.save
+        assert_equal(test_candidate[:copy_requested], candidate.copy_requested)
+      end
+
       should 'include an empty documents list' do
         # TODO(joncalhoun): Implement this when test docs are available.
 

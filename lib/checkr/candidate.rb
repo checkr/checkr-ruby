@@ -26,6 +26,8 @@ module Checkr
     api_class_method :create, :post
     api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
 
+    api_instance_method :save, :post, :default_params => :changed_attributes
+
     def self.path
       "/v1/candidates"
     end
