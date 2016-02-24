@@ -212,7 +212,7 @@ module Checkr
   def self.connection_message
     "Please check your internet connection and try again. " \
     "If this problem persists, you should check Checkr's service status at " \
-    "https://twitter.com/checkr, or let us know at hello@checkr.com."
+    "https://twitter.com/checkrstatus, or let us know at hello@checkr.com."
   end
 
   def self.handle_api_error(rcode, rbody)
