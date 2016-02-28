@@ -1,4 +1,4 @@
-# Checkr Ruby bindings ![Travis CI Status](https://travis-ci.org/checkr/checkr-ruby.svg?branch=master) [![Code Climate](https://codeclimate.com/github/checkr/checkr-ruby/badges/gpa.svg)](https://codeclimate.com/github/checkr/checkr-ruby)
+# Checkr Ruby bindings [![Build Status](https://travis-ci.org/checkr/checkr-ruby.svg?branch=master)](https://travis-ci.org/checkr/checkr-ruby) [![Code Climate](https://codeclimate.com/github/checkr/checkr-ruby/badges/gpa.svg)](https://codeclimate.com/github/checkr/checkr-ruby)
 
 
 ## Installation
