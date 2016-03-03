@@ -1,3 +1,4 @@
+require 'bump/tasks'
 require 'rake/testtask'
 require './tasks/api_test.rb'
 

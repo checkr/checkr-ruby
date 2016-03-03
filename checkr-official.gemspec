@@ -17,8 +17,9 @@ spec = Gem::Specification.new do |s|
 
   s.add_development_dependency('mocha', '~> 0.13.2')
   s.add_development_dependency('shoulda', '~> 3.4.0')
+  s.add_development_dependency('bump', '0.5.2')
+  s.add_development_dependency('rake', '10.4.2')
   s.add_development_dependency('test-unit')
-  s.add_development_dependency('rake')
 
   s.files = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- test/*`.split("\n")

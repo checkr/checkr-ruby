@@ -1,3 +1,3 @@
 module Checkr
-  VERSION = File.open(File.expand_path("../../../VERSION", __FILE__)).read()
+  VERSION = '1.1.0'.freeze
 end
