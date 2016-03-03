@@ -24,21 +24,6 @@ require 'checkr'
 ```
 
 
-
-## Requirements
-
-* Ruby 1.8.7 or above. (Ruby 1.8.6 may work if you load
-  ActiveSupport.) For Ruby versions before 1.9.2, you'll need to add this to your Gemfile:
-
-```ruby
-if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('1.9.2')
-  gem 'rest-client', '~> 1.6.8'
-end
-```
-
-* rest-client, json
-
-
 ## Bundler
 
 If you are installing via bundler, you should be sure to use the https
