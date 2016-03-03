@@ -1,5 +1,4 @@
 language: ruby
-
 rvm:
   - 1.9.3
   - 2.0.0
@@ -7,10 +6,3 @@ rvm:
   - 2.2
   - 2.3.0
   - jruby
-
-gemfile:
-  - gemfiles/default-with-activesupport.gemfile
-  - gemfiles/json.gemfile
-  - gemfiles/yajl.gemfile
-
-sudo: false
