@@ -2,7 +2,7 @@ $:.unshift(File.join(File.dirname(__FILE__), 'lib'))
 
 require 'checkr/version'
 
-spec = Gem::Specification.new do |s|
+Gem::Specification.new do |s|
   s.name = 'checkr-official'
   s.summary = 'Ruby bindings for Checkr API'
   s.description = 'Checkr - Automated background screenings and driving records. See https://checkr.com/ for details.'
@@ -10,6 +10,8 @@ spec = Gem::Specification.new do |s|
   s.authors = ['Jon Calhoun']
   s.email = ['joncalhoun@gmail.com']
   s.version = Checkr::VERSION
+
+  s.required_ruby_version = '>= 1.9.3'
 
   s.add_dependency('rest-client', '~> 1.4')
   s.add_dependency('mime-types', '>= 1.25', '< 3.0')
