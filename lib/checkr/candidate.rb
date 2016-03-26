@@ -3,6 +3,7 @@ module Checkr
 
     attribute :first_name
     attribute :middle_name
+    attribute :no_middle_name
     attribute :last_name
     attribute :email
     attribute :phone
