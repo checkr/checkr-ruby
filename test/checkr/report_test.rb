@@ -67,6 +67,10 @@ module Checkr
         assert_equal(test_report[:status], @report.status)
       end
 
+      should 'have the adjudication attribute' do
+        assert_equal(test_report[:adjudication], @report.adjudication)
+      end
+
       should 'have the created_at attribute' do
         assert_equal(test_report[:created_at], @report.created_at)
       end

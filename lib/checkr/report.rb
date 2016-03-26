@@ -2,6 +2,7 @@ module Checkr
   class Report < APIResource
 
     attribute :status
+    attribute :adjudication
     attribute :values
     attribute :completed_at
     attribute :turnaround_time

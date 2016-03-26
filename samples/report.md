@@ -139,6 +139,7 @@ report.save
 ```ruby
 #<Checkr::Report:0x3fd909d21cf8 id=4722c07dd9a10c3985ae432a> JSON: {
   "status": "pending",
+  "adjudication": null,
   "values": null,
   "completed_at": null,
   "turnaround_time": null,
