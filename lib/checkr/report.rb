@@ -22,9 +22,6 @@ module Checkr
     attribute :national_criminal_search, :NationalCriminalSearch
     attribute_writer_alias :national_criminal_search_id, :national_criminal_search
 
-    attribute :terrorist_watchlist_search, :TerroristWatchlistSearch
-    attribute_writer_alias :terrorist_watchlist_search_id, :terrorist_watchlist_search
-
     attribute :county_criminal_searches, APIList.constructor(:CountyCriminalSearch)
     attribute_writer_alias :county_criminal_search_ids, :county_criminal_searches
 
