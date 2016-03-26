@@ -1,3 +1,10 @@
+## 1.1.1 (2016-03-25)
+
+Features:
+
+  - Add support for Candidate.no_middle_name flag (#8)
+  - Add Documents to Report (@sico, #12)
+
 ## 1.1.0 (2016-03-03)
 
 Features:
