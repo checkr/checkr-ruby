@@ -143,10 +143,6 @@ module Checkr
         assert_equal(test_candidate[:copy_requested], @candidate.copy_requested)
       end
 
-      should 'have the adjudication attribute' do
-        assert_equal(test_candidate[:adjudication], @candidate.adjudication)
-      end
-
       should 'have the custom_id attribute' do
         assert_equal(test_candidate[:custom_id], @candidate.custom_id)
       end
