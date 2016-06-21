@@ -76,6 +76,7 @@ module Checkr
        :object=>"report",
        :uri=>"/v1/reports/4722c07dd9a10c3985ae432a",
        :status=>"clear",
+       :adjudication=>nil,
        :created_at=>"2014-01-18T12:34:00Z",
        :completed_at=>"2014-01-18T12:35:30Z",
        :turnaround_time=>90,
