@@ -31,6 +31,7 @@ require 'checkr/sex_offender_search'
 require 'checkr/ssn_trace'
 require 'checkr/subscription'
 require 'checkr/terrorist_watchlist_search'
+require 'checkr/global_watchlist_search'
 require 'checkr/eviction_search'
 
 # Errors

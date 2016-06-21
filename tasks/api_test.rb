@@ -14,6 +14,7 @@ class APITest
     run_sex_offender_search_tests(consider, clear)
     # TODO: Uncomment this when there isn't a forbidden bug with shared resources in test.
     # run_terrorist_watchlist_search_tests(consider, clear)
+    # run_global_watchlist_search_tests(consider, clear)
     run_national_criminal_search_tests(consider, clear)
     run_county_criminal_search_tests(consider, clear)
     run_motor_vehicle_report_tests(consider, clear)
@@ -149,6 +150,18 @@ class APITest
     puts "Retrieved the terrorist_watchlist_search: #{terrorist_watchlist_search.inspect}"
 
     terrorist_watchlist_search
+  end
+
+  def run_global_watchlist_search_tests(consider, clear)
+    puts "Retrieving using consider..."
+    consider.global_watchlist_search.refresh
+    puts "Retrieved the global_watchlist_search: #{consider.global_watchlist_search.inspect}"
+
+    puts "Retrieving using clear report..."
+    global_watchlist_search = Checkr::GlobalWatchlistSearch.retrieve(clear.global_watchlist_search.id)
+    puts "Retrieved the global_watchlist_search: #{global_watchlist_search.inspect}"
+
+    global_watchlist_search
   end
 
   def run_national_criminal_search_tests(consider, clear)

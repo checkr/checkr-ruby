@@ -1,11 +1,11 @@
-# Terrorist Watchlist Search
+# Global Watchlist Search
 
-## The Terrorist Watchlist Search Object
+## The Global Watchlist Search Object
 
 ### Example Response
 
 ```ruby
-#<Checkr::TerroristWatchlistSearch:0x3fd909b9dc24 id=539fd88c101897f7cd000008> JSON: {
+#<Checkr::GlobalWatchlistSearch:0x3fd909b9dc24 id=539fd88c101897f7cd000008> JSON: {
   "status": "consider",
   "completed_at": "2014-01-18T12:35:30Z",
   "turnaround_time": 90,
@@ -41,20 +41,20 @@
     }
   ],
   "id": "539fd88c101897f7cd000008",
-  "object": "terrorist_watchlist_search",
-  "uri": "/v1/terrorist_watchlist_searches/539fd88c101897f7cd000008",
+  "object": "global_watchlist_search",
+  "uri": "/v1/global_watchlist_searches/539fd88c101897f7cd000008",
   "created_at": "2014-01-18T12:34:00Z"
 }
 ```
 
 
 
-## Retrieve an existing Terrorist Watchlist Search
+## Retrieve an existing Global Watchlist Search
 
 ### Definition
 
 ```ruby
-Checkr::TerroristWatchlistSearch.retrieve({TERRORIST_WATCHLIST_SEARCH_ID})
+Checkr::GlobalWatchlistSearch.retrieve({TERRORIST_WATCHLIST_SEARCH_ID})
 ```
 
 ### Example Request
@@ -63,13 +63,13 @@ Checkr::TerroristWatchlistSearch.retrieve({TERRORIST_WATCHLIST_SEARCH_ID})
 require 'checkr' # Note the gem is named checkr-official
 Checkr.api_key = "83ebeabdec09f6670863766f792ead24d61fe3f9"
 
-tws = Checkr::TerroristWatchlistSearch.retrieve("539fd88c101897f7cd000008")
+tws = Checkr::GlobalWatchlistSearch.retrieve("539fd88c101897f7cd000008")
 ```
 
 ### Example Response
 
 ```ruby
-#<Checkr::TerroristWatchlistSearch:0x3fd909b9dc24 id=539fd88c101897f7cd000008> JSON: {
+#<Checkr::GlobalWatchlistSearch:0x3fd909b9dc24 id=539fd88c101897f7cd000008> JSON: {
   "status": "consider",
   "completed_at": "2014-01-18T12:35:30Z",
   "turnaround_time": 90,
@@ -105,8 +105,8 @@ tws = Checkr::TerroristWatchlistSearch.retrieve("539fd88c101897f7cd000008")
     }
   ],
   "id": "539fd88c101897f7cd000008",
-  "object": "terrorist_watchlist_search",
-  "uri": "/v1/terrorist_watchlist_searches/539fd88c101897f7cd000008",
+  "object": "global_watchlist_search",
+  "uri": "/v1/global_watchlist_searches/539fd88c101897f7cd000008",
   "created_at": "2014-01-18T12:34:00Z"
 }
 ```

@@ -25,6 +25,9 @@ module Checkr
     attribute :terrorist_watchlist_search, :TerroristWatchlistSearch
     attribute_writer_alias :terrorist_watchlist_search_id, :terrorist_watchlist_search
 
+    attribute :global_watchlist_search, :GlobalWatchlistSearch
+    attribute_writer_alias :global_watchlist_search_id, :global_watchlist_search
+
     attribute :county_criminal_searches, APIList.constructor(:CountyCriminalSearch)
     attribute_writer_alias :county_criminal_search_ids, :county_criminal_searches
 
