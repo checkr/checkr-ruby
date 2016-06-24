@@ -13,6 +13,7 @@ module Checkr
     attribute :candidate, :Candidate
     attribute_writer_alias :candidate_id, :candidate
 
+    api_class_method :all, :get, :constructor => APIList.constructor(:Subscription)
     api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
     api_class_method :create, :post
 

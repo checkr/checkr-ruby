@@ -116,6 +116,13 @@ module Checkr
        :candidate_id=>"e44aa283528e6fde7d542194"}
     end
 
+    def test_subscription_list
+      {
+        :object => 'list',
+        :data => [test_subscription, test_subscription, test_subscription]
+      }
+    end
+
     def test_geo
       {:id=>"e44aa283528e6fde7d542194",
        :object=>"geo",

@@ -20,6 +20,17 @@ module Checkr
         assert(subscription.is_a?(Subscription))
         assert_equal(test_subscription[:id], subscription.id)
       end
+
+      should 'be listable' do
+        @mock.expects(:get).once.returns(test_response(test_subscription_list))
+
+        subscriptions = Subscription.all
+
+        assert(subscriptions.is_a?(APIList))
+        subscriptions.each do |subscription|
+          assert(subscription.is_a?(Subscription))
+        end
+      end
     end
 
     context 'Subscription instance' do
