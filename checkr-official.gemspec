@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'
 
-  s.add_dependency('rest-client', '~> 1.4')
+  s.add_dependency('rest-client', '>= 1.4', '< 3.0')
   s.add_dependency('mime-types', '>= 1.25', '< 3.0')
   s.add_dependency('json', '~> 1.8.1')
 
@@ -28,4 +28,3 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib']
 end
-
