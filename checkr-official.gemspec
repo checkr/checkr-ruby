@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency('mocha', '~> 0.13.2')
   s.add_development_dependency('shoulda', '~> 3.4.0')
+  s.add_development_dependency('activesupport', '~> 4.2.6')
   s.add_development_dependency('bump', '0.5.2')
   s.add_development_dependency('rake', '10.4.2')
   s.add_development_dependency('test-unit')
@@ -28,4 +29,3 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib']
 end
-
