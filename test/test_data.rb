@@ -58,7 +58,6 @@ module Checkr
        :previous_driver_license_number=>"F1501739",
        :previous_driver_license_state=>"CA",
        :copy_requested=>false,
-       :adjudication=>nil,
        :custom_id=>nil,
        :report_ids=>["532e71cfe88a1d4e8d00000d"],
        :geo_ids=>["79f943e212cce7de21c054a8", "7299c2c22ebb19abb0688a6c"]}

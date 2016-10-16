@@ -20,7 +20,6 @@ module Checkr
     attribute_writer_alias :report_ids, :reports
     attribute :geos, APIList.constructor(:Geo)
     attribute_writer_alias :geo_ids, :geos
-    attribute :adjudication
     attribute :documents, :DocumentList, :nested => true, :default => {}
 
     api_class_method :all, :get, :constructor => APIList.constructor(:Candidate)
