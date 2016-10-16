@@ -84,7 +84,6 @@ module Checkr
        :ssn_trace_id=>"539fd88c101897f7cd000001",
        :sex_offender_search_id=>"539fd88c101897f7cd000008",
        :national_criminal_search_id=>"539fd88c101897f7cd000006",
-       :terrorist_watchlist_search_id=>"53f11ec23934620002010000",
        :global_watchlist_search_id=>"53f11ec23934620002010000",
        :county_criminal_search_ids=>
         ["539fdcf335644a0ef4000001", "532e71cfe88a1d4e8d00000i"],
@@ -184,41 +183,6 @@ module Checkr
              :classification=>nil,
              :disposition=>"Guilty",
              :deposition_date=>"2010-12-22"}]}]}
-    end
-
-    def test_terrorist_watchlist_search
-      {:id=>"539fd88c101897f7cd000008",
-       :object=>"terrorist_watchlist_search",
-       :uri=>"/v1/terrorist_watchlist_searches/539fd88c101897f7cd000008",
-       :status=>"consider",
-       :created_at=>"2014-01-18T12:34:00Z",
-       :completed_at=>"2014-01-18T12:35:30Z",
-       :turnaround_time=>90,
-       :records=>
-        [{:case_number=>"24323-DA",
-          :file_date=>nil,
-          :arresting_agency=>"DEA Boston Division",
-          :court_jurisdiction=>nil,
-          :court_of_record=>nil,
-          :dob=>"1970-01-22",
-          :full_name=>"John Alfred Smith",
-          :charges=>
-           [{:charge=>"RICO murder",
-             :charge_type=>nil,
-             :charge_id=>nil,
-             :classification=>"Felony",
-             :deposition=>nil,
-             :defendant=>nil,
-             :plaintiff=>nil,
-             :sentence=>"Active Punishment Minimum: 10Y",
-             :disposition=>"Guilty",
-             :probation_status=>nil,
-             :offense_date=>"2011-04-22",
-             :deposition_date=>"2014-05-27",
-             :arrest_date=>nil,
-             :charge_date=>nil,
-             :sentence_date=>nil,
-             :disposition_date=>"2011-06-02"}]}]}
     end
 
     def test_global_watchlist_search

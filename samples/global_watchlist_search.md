@@ -54,7 +54,7 @@
 ### Definition
 
 ```ruby
-Checkr::GlobalWatchlistSearch.retrieve({TERRORIST_WATCHLIST_SEARCH_ID})
+Checkr::GlobalWatchlistSearch.retrieve({GLOBAL_WATCHLIST_SEARCH_ID})
 ```
 
 ### Example Request

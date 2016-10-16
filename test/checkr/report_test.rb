@@ -107,11 +107,6 @@ module Checkr
         assert(@report.national_criminal_search.is_a?(NationalCriminalSearch))
       end
 
-      should 'have the terrorist_watchlist_search_id attribute' do
-        assert_equal(test_report[:terrorist_watchlist_search_id], @report.terrorist_watchlist_search.id)
-        assert(@report.terrorist_watchlist_search.is_a?(TerroristWatchlistSearch))
-      end
-
       should 'have the global_watchlist_search_id attribute' do
         assert_equal(test_report[:global_watchlist_search_id], @report.global_watchlist_search.id)
         assert(@report.global_watchlist_search.is_a?(GlobalWatchlistSearch))
