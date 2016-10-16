@@ -23,9 +23,6 @@ module Checkr
     attribute :national_criminal_search, :NationalCriminalSearch
     attribute_writer_alias :national_criminal_search_id, :national_criminal_search
 
-    attribute :terrorist_watchlist_search, :TerroristWatchlistSearch
-    attribute_writer_alias :terrorist_watchlist_search_id, :terrorist_watchlist_search
-
     attribute :global_watchlist_search, :GlobalWatchlistSearch
     attribute_writer_alias :global_watchlist_search_id, :global_watchlist_search
 
