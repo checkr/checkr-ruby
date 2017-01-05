@@ -1,3 +1,9 @@
+## 1.1.2 (2017-01-05)
+
+Fixes:
+
+ - Gem dependencies version lock release
+
 ## 1.1.1 (2016-03-25)
 
 Features:
