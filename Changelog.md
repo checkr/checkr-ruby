@@ -1,3 +1,14 @@
+## 1.2.0 (2017-04-14)
+
+Features:
+
+ - Add Invitation
+
+Fixes:
+
+ - Add `document_ids` to Candidate
+ - Doc links
+
 ## 1.1.2 (2017-01-05)
 
 Fixes:
@@ -8,7 +19,7 @@ Fixes:
 
 Features:
 
-  - Add support for Candidate.no_middle_name flag (#8)
+  - Add support for `Candidate#no_middle_name` flag (#8)
   - Add Documents to Report (@sico, #12)
 
 ## 1.1.0 (2016-03-03)

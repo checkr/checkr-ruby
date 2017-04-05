@@ -250,7 +250,6 @@ module Checkr
 
         resp = Checkr.request(method, composed_path, arguments[:params], arguments[:opts])
 
-
         api_lambda_construct(resp, constructor, self)
       end
     end

@@ -60,6 +60,8 @@ module Checkr
        :copy_requested=>false,
        :custom_id=>nil,
        :report_ids=>["532e71cfe88a1d4e8d00000d"],
+       :document_ids => ["4722c07dd9a10c3985ae432a"],
+       :invitation_ids => ["2c8447d8c35761ad8f70d9d3"],
        :geo_ids=>["79f943e212cce7de21c054a8", "7299c2c22ebb19abb0688a6c"]}
     end
 
@@ -290,6 +292,21 @@ module Checkr
              :charge_date=>nil,
              :sentence_date=>"2011-06-02",
              :disposition_date=>"2011-06-02"}]}]}
+    end
+
+    def test_invitation
+      { id: '2c8447d8c35761ad8f70d9d3',
+        status: 'pending',
+        uri: '/v1/invitations/2c8447d8c35761ad8f70d9d3',
+        invitation_url: 'https://checkr.com/invitations/2c8447d8c35761ad8f70d9d3',
+        completed_at: nil,
+        deleted_at: nil,
+        expires_at: '2015-05-21T17:45:34Z',
+        package: 'mvr',
+        object: 'invitation',
+        created_at: '2015-05-14T17:45:34Z',
+        candidate_id: '0130da24eb04f6f13973b490'
+      }
     end
 
     def test_motor_vehicle_report

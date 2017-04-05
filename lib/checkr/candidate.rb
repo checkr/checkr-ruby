@@ -21,6 +21,7 @@ module Checkr
     attribute :geos, APIList.constructor(:Geo)
     attribute_writer_alias :geo_ids, :geos
     attribute :documents, :DocumentList, :nested => true, :default => {}
+    attribute_writer_alias :document_ids, :documents
 
     api_class_method :all, :get, :constructor => APIList.constructor(:Candidate)
     api_class_method :create, :post
