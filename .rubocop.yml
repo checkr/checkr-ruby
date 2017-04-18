@@ -1,0 +1,50 @@
+AllCops:
+  Include:
+    - 'config.ru'
+    - 'Rakefile'
+  Exclude:
+    - 'Gemfile'
+    - 'bin/**/*'
+    - 'data/**/*'
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+  DisplayCopNames: true
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/ClassLength:
+  Max: 150
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/BlockLength:
+  Max: 100
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/Documentation:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '[]'
+    '%w': '[]'
+    '%W': '[]'
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes

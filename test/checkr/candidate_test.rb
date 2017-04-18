@@ -158,8 +158,13 @@ module Checkr
       end
 
       should 'have the documents attribute' do
-        assert(!@candidate.documents.any?)
+        assert(@candidate.documents.any?)
         assert(@candidate.documents.is_a?(DocumentList))
+      end
+
+      should 'have the document_ids attribute' do
+        assert_equal(test_candidate[:document_ids], @candidate.documents.json)
+        assert(@candidate.documents.is_a?(APIList))
       end
 
     end

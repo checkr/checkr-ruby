@@ -1,5 +1,5 @@
 # Checkr Ruby bindings
-# API spec at https://checkr.com/docs/api
+# API spec at https://docs.checkr.com
 require 'cgi'
 require 'set'
 require 'openssl'
@@ -22,7 +22,10 @@ require 'checkr/candidate'
 require 'checkr/county_criminal_search'
 require 'checkr/document'
 require 'checkr/document_list'
+require 'checkr/eviction_search'
 require 'checkr/geo'
+require 'checkr/global_watchlist_search'
+require 'checkr/invitation'
 require 'checkr/motor_vehicle_report'
 require 'checkr/national_criminal_search'
 require 'checkr/report'
@@ -30,8 +33,6 @@ require 'checkr/report_list'
 require 'checkr/sex_offender_search'
 require 'checkr/ssn_trace'
 require 'checkr/subscription'
-require 'checkr/global_watchlist_search'
-require 'checkr/eviction_search'
 
 # Errors
 require 'checkr/errors/checkr_error'
@@ -151,14 +152,14 @@ module Checkr
       raise AuthenticationError.new('No API key provided. ' +
         'Set your API key using "Checkr.api_key = <API-KEY>". ' +
         'You can generate API keys from the Checkr web interface. ' +
-        'See https://checkr.com/docs#authentication for details, ' +
+        'See https://docs.checkr.com/#authentication for details, ' +
         'or email hello@checkr.com if you have any questions.')
     end
 
     if api_key =~ /\s/
       raise AuthenticationError.new('Your API key is invalid, as it contains ' +
         'whitespace. (HINT: You can double-check your API key from the ' +
-        'Checkr web interface. See https://checkr.com/docs#authentication for details, or ' +
+        'Checkr web interface. See https://docs.checkr.com/#authentication for details, or ' +
         'email hello@checkr.com if you have any questions.)')
     end
   end
