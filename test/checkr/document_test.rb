@@ -84,6 +84,10 @@ module Checkr
         assert_equal(test_document[:content_type], @document.content_type)
       end
 
+      should 'have the type attribute' do
+        assert_equal(test_document[:type], @document.type)
+      end
+
     end
 
     should 'be registered' do

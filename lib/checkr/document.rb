@@ -5,6 +5,7 @@ module Checkr
     attribute :filesize
     attribute :filename
     attribute :content_type
+    attribute :type
 
     api_class_method :all, :get, "/v1/candidates/:candidate_id/documents", :constructor => :DocumentList
     api_class_method :create, :post, "/v1/candidates/:candidate_id/documents"
