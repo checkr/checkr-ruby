@@ -1,3 +1,9 @@
+## 1.2.1 (2017-10-25)
+
+Fixes:
+
+ - Add `type` to Document (#33)
+
 ## 1.2.0 (2017-04-14)
 
 Features:
