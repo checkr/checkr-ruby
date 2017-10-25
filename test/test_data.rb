@@ -408,6 +408,7 @@ module Checkr
        :download_uri=>"https://checkr-documents.checkr.com/download_path",
        :filesize=>8576,
        :filename=>"1423684910_candidate_driver_license.jpg",
+       :type=>"driver_license",
        :content_type=>"image/jpeg"}
     end
     def test_document_list
