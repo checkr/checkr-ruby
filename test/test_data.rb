@@ -125,6 +125,31 @@ module Checkr
        :state=>"CA"}
     end
 
+    def test_package
+      {:id=>"e44aa283528e6fde7d542194",
+       :object=>"package",
+       :uri=>"/v1/packages/e44aa283528e6fde7d542194",
+       :created_at=>"2018-01-18T12:34:00Z",
+       :name=>"Criminal Pro",
+       :slug=>"criminal_pro",
+       :price=>"6500",
+       :screenings=>
+         [{:type=>"ssn_trace",
+           :subtype=>nil},
+          {:type=>"county_criminal_search",
+           :subtype=>"7years"}]}
+    end
+
+    def test_program
+      {:id=>"e44aa283528e6fde7d542194",
+       :object=>"program",
+       :uri=>"/v1/programs/e44aa283528e6fde7d542194",
+       :created_at=>"2018-01-18T12:34:00Z",
+       :deleted_at=>"2018-01-18T12:34:00Z",
+       :geo_ids=>["cbc37748bc6a45b41af5c3f5"],
+       :package_ids=>["a57a0cd15965a585ff7d5d35"]}
+    end
+
     def test_ssn_trace
       {:id=>"539fd88c101897f7cd000001",
        :object=>"ssn_trace",
