@@ -73,6 +73,14 @@ module Checkr
       end
     end
 
+    context '#all' do
+      should 'return instances of Package' do
+        @mock.expects(:get).once.with(@package_url, anything, anything)
+            .returns(test_response(test_package_list))
+        assert_equal(Package.all.first.class, Package)
+      end
+    end
+
     should 'be registered' do
       assert(APIClass.subclasses.include?(Package))
       assert_equal(Package, APIClass.subclass_fetch('package'))
