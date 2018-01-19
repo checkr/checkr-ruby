@@ -10,6 +10,12 @@ AllCops:
     - 'vendor/**/*'
   DisplayCopNames: true
 
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
 Metrics/AbcSize:
   Max: 20
 
@@ -33,12 +39,6 @@ Style/Documentation:
 
 Style/SymbolArray:
   Enabled: false
-
-Style/EmptyLinesAroundClassBody:
-  EnforcedStyle: empty_lines
-
-Style/MultilineMethodCallIndentation:
-  EnforcedStyle: indented
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
