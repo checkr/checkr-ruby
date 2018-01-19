@@ -1,3 +1,10 @@
+## 1.3.0 (2018-01-19)
+
+Features:
+
+ - Add Package
+ - Add Program
+
 ## 1.2.1 (2017-10-25)
 
 Fixes:

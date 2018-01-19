@@ -186,7 +186,4 @@ class APITest
 
     motor_vehicle_report
   end
-
-
-
 end
