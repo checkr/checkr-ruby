@@ -14,14 +14,6 @@ module Checkr
         program = Program.retrieve(id)
         assert(program.is_a?(Program))
       end
-
-      should 'be createable' do
-        @mock.expects(:post).once.with(@program_url, anything, test_program)
-          .returns(test_response(test_program))
-        program = Program.create(test_program)
-        assert(program.is_a?(Program))
-        assert_equal(program.id, test_program[:id])
-      end
     end
 
     context 'Program instance' do
@@ -77,6 +69,14 @@ module Checkr
       should 'have the package_ids attribute' do
         assert_equal(@program.packages.json, test_program[:package_ids])
         assert(@program.packages.is_a?(APIList))
+      end
+    end
+
+    context '#all' do
+      should 'return instances of Program' do
+        @mock.expects(:get).once.with(@program_url, anything, anything)
+            .returns(test_response(test_program_list))
+        assert_equal(Program.all.first.class, Program)
       end
     end
 

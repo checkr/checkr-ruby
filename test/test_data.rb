@@ -140,6 +140,13 @@ module Checkr
            :subtype=>"7years"}]}
     end
 
+    def test_package_list
+      {
+        :object => 'list',
+        :data => [test_package, test_package, test_package],
+      }
+    end
+
     def test_program
       {:id=>"e44aa283528e6fde7d542194",
        :object=>"program",
@@ -148,6 +155,13 @@ module Checkr
        :deleted_at=>"2018-01-18T12:34:00Z",
        :geo_ids=>["cbc37748bc6a45b41af5c3f5"],
        :package_ids=>["a57a0cd15965a585ff7d5d35"]}
+    end
+
+    def test_program_list
+      {
+        :object => 'list',
+        :data => [test_program, test_program, test_program],
+      }
     end
 
     def test_ssn_trace
