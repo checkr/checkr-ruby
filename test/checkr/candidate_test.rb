@@ -43,7 +43,10 @@ module Checkr
 
       should 'be updateable' do
         candidate = Candidate.new(test_candidate)
+        candidate.geo_ids = ['test']
         candidate.copy_requested = true
+
+        assert_equal(candidate.changed_attributes, copy_requested: true, geo_ids: ['test'])
 
         @mock.expects(:post).once.with do |url, headers, params|
           params == candidate.changed_attributes && url == "#{@candidate_url}/#{candidate.id}"
