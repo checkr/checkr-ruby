@@ -1,4 +1,10 @@
-## 1.3.0 (2018-01-19)
+## v1.4.0 (2018-01-24)
+
+Features:
+
+- Allow candidate geos to be updated
+
+## 1.3.1 (2018-01-19)
 
 Features:
 

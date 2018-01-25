@@ -18,8 +18,7 @@ module Checkr
     attribute :custom_id
     attribute :reports, :ReportList, :nested => true
     attribute_writer_alias :report_ids, :reports
-    attribute :geos, APIList.constructor(:Geo)
-    attribute_writer_alias :geo_ids, :geos
+    attribute :geo_ids
     attribute :documents, :DocumentList, :nested => true, :default => {}
     attribute_writer_alias :document_ids, :documents
 
@@ -28,6 +27,10 @@ module Checkr
     api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
 
     api_instance_method :save, :post, :default_params => :changed_attributes
+
+    def geos
+      APIList.constructor(:Geo).call(geo_ids)
+    end
 
     def self.path
       "/v1/candidates"

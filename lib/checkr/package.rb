@@ -6,7 +6,7 @@ module Checkr
     attribute :price
     attribute :screenings
 
-    api_class_method :all, :get, :constructor => APIList.constructor(:Geo)
+    api_class_method :all, :get, :constructor => APIList.constructor(:Package)
     api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
     api_class_method :create, :post
 
