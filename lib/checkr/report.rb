@@ -35,6 +35,9 @@ module Checkr
     attribute :documents, APIList.constructor(:Document)
     attribute_writer_alias :document_ids, :documents
 
+    attribute :verifications, :VerificationList, :nested => true, :default => {}
+    attribute_writer_alias :verification_ids, :verifications
+
     api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
     api_class_method :create, :post
 

@@ -35,6 +35,8 @@ require 'checkr/report_list'
 require 'checkr/sex_offender_search'
 require 'checkr/ssn_trace'
 require 'checkr/subscription'
+require 'checkr/verification'
+require 'checkr/verification_list'
 
 # Errors
 require 'checkr/errors/checkr_error'
