@@ -457,6 +457,21 @@ module Checkr
       }
     end
 
+    def test_verification
+      {:id=>"db313e73383710d4fa2f18fd",
+       :object=>"verification",
+       :created_at=>"2015-02-11T20:01:50Z",
+       :verification_type=>"id",
+       :verification_url=>"http://verifications.checkr.com/db313e73383710d4fa2f18fd",
+       :completed_at=>nil}
+    end
+    def test_verification_list
+      {
+        :object => 'list',
+        :data => [test_verification, test_verification, test_verification],
+      }
+    end
+
     # Errors
     def test_api_error
       {

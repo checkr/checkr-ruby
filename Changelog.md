@@ -1,3 +1,9 @@
+## v1.5.0 (2018-02-2)
+
+Features:
+
+- Add Verification
+
 ## v1.4.0 (2018-01-24)
 
 Features:
