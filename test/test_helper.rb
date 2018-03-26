@@ -34,9 +34,11 @@ class Test::Unit::TestCase
     @mock = mock
     Checkr.mock_rest_client = @mock
     Checkr.api_key="foo"
+    before_test if respond_to?(:before_test)
   end
 
   teardown do
+    after_test if respond_to?(:after_test)
     Checkr.mock_rest_client = nil
     Checkr.api_key=nil
   end

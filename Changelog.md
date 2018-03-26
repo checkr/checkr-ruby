@@ -1,4 +1,11 @@
-## v1.5.0 (2018-02-2)
+## v1.5.1 (2018-03-26)
+
+Fixes:
+
+- Make thread safe `api_key` and `api_base` configuration
+
+
+## v1.5.0 (2018-02-02)
 
 Features:
 

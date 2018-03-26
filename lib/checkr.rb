@@ -46,15 +46,34 @@ require 'checkr/errors/invalid_request_error'
 require 'checkr/errors/authentication_error'
 
 module Checkr
-  @api_base = "https://api.checkr.com"
-  @api_key = nil
+  @api_base = 'https://api.checkr.com'.freeze
+  @main_thread = nil
 
-  class << self
-    attr_accessor :api_key, :api_base, :api_test
+  def self.main_thread
+    @main_thread ||= Thread.current
+  end
+
+  # Inspired by ActiveSupport #thread_mattr_accessor
+
+  def self.api_key
+    Thread.current['attr_Checkr_api_key'] || @main_thread['attr_Checkr_api_key']
+  end
+
+  def self.api_key=(key)
+    main_thread['attr_Checkr_api_key'] = key if main_thread == Thread.current
+    Thread.current['attr_Checkr_api_key'] = key
+  end
+
+  def self.api_base
+    Thread.current['attr_Checkr_api_base'] || @api_base
+  end
+
+  def self.api_base=(base)
+    Thread.current['attr_Checkr_api_base'] = base
   end
 
   def self.api_url(path='')
-    "#{@api_base}#{path}"
+    "#{api_base}#{path}"
   end
 
   def self.request(method, path, params={}, headers={})
