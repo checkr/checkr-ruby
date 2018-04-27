@@ -5,10 +5,10 @@ require 'checkr/version'
 Gem::Specification.new do |s|
   s.name = 'checkr-official'
   s.summary = 'Ruby bindings for Checkr API'
-  s.description = 'Checkr - Automated background screenings and driving records. See https://checkr.com/ for details.'
+  s.description = 'Checkr - Background check platform for the New World of Work. See https://docs.checkr.com for details.'
   s.homepage = 'https://checkr.com/'
-  s.authors = ['Jon Calhoun']
-  s.email = ['joncalhoun@gmail.com']
+  s.authors = ['Checkr Engineering Team']
+  s.email = ['eng@checkr.com']
   s.version = Checkr::VERSION
 
   s.required_ruby_version = '>= 1.9.3'
