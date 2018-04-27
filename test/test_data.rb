@@ -261,6 +261,45 @@ module Checkr
              :disposition_date=>"2011-06-02"}]}]}
     end
 
+    def test_federal_criminal_search
+      {
+        :status=>"clear",
+        :completed_at=>"2018-04-27T05:21:18Z",
+        :turnaround_time=>144.912,
+        :records=>[],
+        :id=>"5ae2b2ae6e1e974363c826ed",
+        :object=>"federal_criminal_search",
+        :uri=>"/v1/federal_criminal_searches/5ae2b2ae6e1e974363c826ed",
+        :created_at=>"2018-04-27T05:18:38Z"
+      }
+    end
+
+    def test_federal_civil_search
+      {
+        :status=>"consider",
+        :completed_at=>"2018-04-27T05:23:12Z",
+        :turnaround_time=>271.332,
+        :records=>[
+          {
+            :id=>"5ae2b3a36e1e974363c826f5",
+            :case_number=>'CASE_NUM',
+            :file_date=>'01-',
+            :court_jurisdiction=>'SOME_JURISDICTION',
+            :court_of_record=>'SOME_COURT',
+            :full_name=>'BOB A SMITH',
+            :county=>'SAN FRANCISCO',
+            :state=>'CA',
+            :company=>'TECH COMPANY',
+            :charges=>[],
+            :address=>nil
+          }
+        ],
+        :id=>"5ae2b2ae6e1e974363c826ee",
+        :object=>"federal_civil_search",
+        :created_at=>"2018-04-27T05:18:38Z"
+      }
+    end
+
     def test_national_criminal_search
       {:id=>"539fd88c101897f7cd000006",
        :object=>"national_criminal_search",
