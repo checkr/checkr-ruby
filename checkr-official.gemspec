@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.authors = ['Checkr Engineering Team']
   s.email = ['eng@checkr.com']
   s.version = Checkr::VERSION
+  s.license = 'Apache-2.0'
 
   s.required_ruby_version = '>= 1.9.3'
 
