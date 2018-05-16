@@ -511,6 +511,17 @@ module Checkr
       }
     end
 
+    def test_education_verification
+      {:id => "5af5e030d24297006cce1e06",
+       :object => "education_verification",
+       :uri => "/v1/education_verifications/5af5e030d24297006cce1e06",
+       :status => "consider",
+       :created_at => "2018-05-11T18:25:52Z",
+       :completed_at => "2018-05-11T18:26:04Z",
+       :turnaround_time => 12,
+       :records => []}
+    end
+
     # Errors
     def test_api_error
       {
