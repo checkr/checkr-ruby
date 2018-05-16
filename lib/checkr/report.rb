@@ -44,6 +44,9 @@ module Checkr
     attribute :verifications, :VerificationList, :nested => true, :default => {}
     attribute_writer_alias :verification_ids, :verifications
 
+    attribute :education_verification, :EducationVerification
+    attribute_writer_alias :education_verification_id, :education_verification
+
     api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
     api_class_method :create, :post
 
