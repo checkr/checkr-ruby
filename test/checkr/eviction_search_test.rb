@@ -3,7 +3,7 @@ require File.expand_path('../../test_helper', __FILE__)
 module Checkr
   class EvictionSearchTest < Test::Unit::TestCase
     setup do
-      @eviction_search_url = "#{Checkr.api_base}/v1/evictions"
+      @eviction_search_url = "#{Checkr.api_base}/v1/eviction_searches"
     end
 
     context 'EvictionSearch class' do

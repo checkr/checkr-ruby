@@ -9,7 +9,7 @@ module Checkr
     api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
 
     def self.path
-      "/v1/evictions"
+      "/v1/eviction_searches"
     end
 
     APIClass.register_subclass(self, "eviction_search")
