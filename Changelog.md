@@ -1,3 +1,20 @@
+## v1.5.2 (2018-09-25)
+
+Features:
+
+- Add Subscription List
+
+Fixes:
+
+- Fix API endpoint for Eviction Search
+
+## v1.5.1 (2018-04-27)
+
+Features:
+
+- Add FederalCivilSearch
+- Add FederalCriminalSearch
+
 ## v1.5.0 (2018-02-2)
 
 Features:
