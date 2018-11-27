@@ -122,6 +122,11 @@ module Checkr
         assert(@report.documents.is_a?(APIList))
       end
 
+      should "have the geos attribute" do
+        assert_equal(test_report[:geo_ids], @report.geos.json)
+        assert(@report.geos.is_a?(APIList))
+      end
+
       should 'have the motor_vehicle_report_id attribute' do
         assert_equal(test_report[:motor_vehicle_report_id], @report.motor_vehicle_report.id)
         assert(@report.motor_vehicle_report.is_a?(MotorVehicleReport))
