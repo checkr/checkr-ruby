@@ -41,6 +41,9 @@ module Checkr
     attribute :documents, APIList.constructor(:Document)
     attribute_writer_alias :document_ids, :documents
 
+    attribute :geos, APIList.constructor(:Geo), :default => {}
+    attribute_writer_alias :geo_ids, :geos
+
     attribute :verifications, :VerificationList, :nested => true, :default => {}
     attribute_writer_alias :verification_ids, :verifications
 

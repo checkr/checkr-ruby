@@ -91,7 +91,8 @@ module Checkr
         ["539fdcf335644a0ef4000001", "532e71cfe88a1d4e8d00000i"],
        :motor_vehicle_report_id=>"539fd88c101897f7cd000007",
        :eviction_search_id=>"539fd88c101897f7cd000008",
-       :document_ids => ["4722c07dd9a10c3985ae432a"]
+       :document_ids => ["4722c07dd9a10c3985ae432a"],
+       :geo_ids => ["e44aa283528e6fde7d542194"]
        }
     end
 
