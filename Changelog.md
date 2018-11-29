@@ -1,3 +1,7 @@
+## v1.5.3 (2018-11-28)
+
+- Add geos to Report
+
 ## v1.5.2 (2018-09-25)
 
 Features:
