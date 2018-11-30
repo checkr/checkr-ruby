@@ -61,6 +61,8 @@ module Checkr
   end
 
   def self.request(method, path, params={}, headers={})
+    api_key = headers.key?(:api_key) ? headers.delete(:api_key) : @api_key
+
     verify_api_key(api_key)
 
     url = api_url(path)
