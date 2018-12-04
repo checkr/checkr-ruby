@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency('bump', '0.5.2')
   s.add_development_dependency('rake', '10.4.2')
   s.add_development_dependency('test-unit')
+  s.add_development_dependency('pry')
 
   s.files = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- test/*`.split("\n")

@@ -11,6 +11,7 @@ require 'base64'
 require 'checkr/version'
 
 # Resources
+require 'checkr/client'
 require 'checkr/api_class'
 require 'checkr/api_resource'
 require 'checkr/api_singleton'
@@ -49,21 +50,17 @@ require 'checkr/errors/invalid_request_error'
 require 'checkr/errors/authentication_error'
 
 module Checkr
-  @api_base = "https://api.checkr.com"
-  @api_key = nil
-
-  class << self
-    attr_accessor :api_key, :api_base, :api_test
-  end
-
-  def self.api_url(path='')
-    "#{@api_base}#{path}"
-  end
 
   def self.request(method, path, params={}, headers={})
+    api_key = params[:client] ? params[:client].api_key : Checkr::Client.api_key
+    api_base = params[:client] ? params[:client].api_base : Checkr::Client.api_base
+    api_url = "#{api_base}#{path}"
+
+    params.delete(:client)
+
     verify_api_key(api_key)
 
-    url = api_url(path)
+    url = api_url
 
     request_opts = { :verify_ssl => false }
 
