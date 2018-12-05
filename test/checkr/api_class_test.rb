@@ -48,6 +48,47 @@ module Checkr
           :filter => 'test filter',
         })
       end
+
+      should 'allow passing an api_key as a param when the global api_key is set' do
+        response = test_response(test_mock_resource_list)
+        api_key = '123456'
+
+        @mock.expects(:get).with do |url, headers, params|
+          (url == "#{Checkr.api_base}#{MockResource.path}?page=1&filter=test%20filter" ||
+            url == "#{Checkr.api_base}#{MockResource.path}?filter=test%20filter&page=1") &&
+            params == nil &&
+            Checkr.api_key == 'foo'
+            headers["Authorization"] == "Basic #{Base64.encode64("#{api_key}:")}"
+        end.returns(response)
+
+        list = MockResource.all(
+          :page => 1,
+          :filter => 'test filter',
+          :api_key => api_key
+        )
+      end
+
+      should 'allow passing an api_key as a param when the global api_key is NOT set' do
+        response = test_response(test_mock_resource_list)
+        api_key = '123456'
+        Checkr.api_key = nil
+
+        
+        @mock.expects(:get).with do |url, headers, params|
+          (url == "#{Checkr.api_base}#{MockResource.path}?page=1&filter=test%20filter" ||
+            url == "#{Checkr.api_base}#{MockResource.path}?filter=test%20filter&page=1") &&
+            params == nil &&
+            headers["Authorization"] == "Basic #{Base64.encode64("#{api_key}:")}"
+        end.returns(response)
+
+        assert_equal(Checkr.api_key, nil)
+
+        list = MockResource.all(
+          :page => 1,
+          :filter => 'test filter',
+          :api_key => api_key
+        )
+      end
     end
 
     context 'Making a DELETE request' do
@@ -59,6 +100,19 @@ module Checkr
           url == "#{Checkr.api_base}#{mock_resource.path}?reason=delinquent%20payments" && payload.nil?
         end.returns(test_response({}))
         mock_resource.delete(:reason => "delinquent payments")
+      end
+
+      should 'allow passing an api_key as a param' do
+        api_key = '123456'
+
+        @mock.expects(:get).once.returns(test_response(test_mock_resource))
+        mock_resource = MockResource.retrieve("fake_id")
+
+        @mock.expects(:delete).once.with do |url, headers, payload|
+          url == "#{Checkr.api_base}#{mock_resource.path}?reason=delinquent%20payments" && payload.nil? &&
+          headers["Authorization"] == "Basic #{Base64.encode64("#{api_key}:")}"
+        end.returns(test_response({}))
+        mock_resource.delete(:reason => "delinquent payments", :api_key => api_key)
       end
     end
 
@@ -73,6 +127,20 @@ module Checkr
         end.returns(test_response(test_mock_resource))
         mock_resource.save
       end
+
+      should 'allow passing an api_key as a param' do
+        api_key = '123456'
+
+        @mock.expects(:get).once.returns(test_response(test_mock_resource))
+        mock_resource = MockResource.retrieve("fake_id")
+        mock_resource.name = "new name"
+
+        @mock.expects(:put).once.with do |url, headers, payload|
+          payload == { :name => "new name"} && 
+          headers["Authorization"] == "Basic #{Base64.encode64("#{api_key}:")}"
+        end.returns(test_response(test_mock_resource))
+        mock_resource.save(:api_key => api_key)
+      end
     end
 
     context 'Making a POST request' do
@@ -81,6 +149,17 @@ module Checkr
         @mock.expects(:post).once.with("#{Checkr.api_base}#{MockResource.path}", anything, params).returns(test_response(test_mock_resource))
 
         MockResource.create(params)
+      end
+
+      should 'allow passing an api_key as a param' do
+        api_key = '123456'
+
+        @mock.expects(:post).once.with do |url, headers, payload|
+          url == "#{Checkr.api_base}#{MockResource.path}" && payload == { :name => "some name" } &&
+          headers["Authorization"] == "Basic #{Base64.encode64("#{api_key}:")}"
+        end.returns(test_response(test_mock_resource))
+
+        MockResource.create(:name => "some name", :api_key => api_key)
       end
     end
 
