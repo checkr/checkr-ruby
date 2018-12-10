@@ -1,3 +1,7 @@
+## v1.5.4 (2018-12-10)
+
+- Add ability to pass api key to individual API method calls
+
 ## v1.5.3 (2018-11-28)
 
 - Add geos to Report
