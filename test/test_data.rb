@@ -145,7 +145,8 @@ module Checkr
          [{:type=>"ssn_trace",
            :subtype=>nil},
           {:type=>"county_criminal_search",
-           :subtype=>"7years"}]}
+           :subtype=>"7years"}],
+       :requires_invitation => false}
     end
 
     def test_package_list

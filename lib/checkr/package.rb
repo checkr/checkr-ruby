@@ -5,6 +5,7 @@ module Checkr
     attribute :slug
     attribute :price
     attribute :screenings
+    attribute :requires_invitation
 
     api_class_method :all, :get, :constructor => APIList.constructor(:Package)
     api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
