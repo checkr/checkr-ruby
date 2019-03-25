@@ -7,6 +7,7 @@ module Checkr
     context 'AuthenticationError' do
       should 'be raised with no API credentials' do
         Checkr.api_key = nil
+        Checkr.bearer_token = nil
         assert_raises(AuthenticationError) do
           MockResource.retrieve('fake_id')
         end

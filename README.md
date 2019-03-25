@@ -47,5 +47,8 @@ Test cases can be run with: `bundle exec rake test`
 To hit the API with some test calls run:
 
 ```bash
+# To use API key
 bundle exec rake test_api["sk_test_api_key"]
+# To use Bearer access token
+bundle exec rake test_api[,"bearer_access_token"]
 ```

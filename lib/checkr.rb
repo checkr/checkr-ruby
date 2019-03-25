@@ -53,7 +53,7 @@ module Checkr
   @api_key = nil
 
   class << self
-    attr_accessor :api_key, :api_base, :api_test
+    attr_accessor :api_key, :api_base, :api_test, :bearer_token
   end
 
   def self.api_url(path='')
@@ -61,10 +61,14 @@ module Checkr
   end
 
   def self.request(method, path, params={}, headers={})
-    api_key = params[:api_key] || self.api_key
-    params.delete(:api_key)
-
-    verify_api_key(api_key)
+    this_token = params.delete(:bearer_token) || self.bearer_token
+    auth_headers = if this_token
+      { 'Authorization' => "Bearer #{this_token}" }
+    else
+      this_api_key = params.delete(:api_key) || self.api_key
+      verify_api_key(this_api_key)
+      basic_auth_headers(this_api_key)
+    end
 
     url = api_url(path)
 
@@ -77,7 +81,7 @@ module Checkr
       params = nil
     end
 
-    headers = default_headers.update(basic_auth_headers(api_key)).update(headers)
+    headers = default_headers.update(auth_headers).update(headers)
     request_opts.update(:headers => headers,
                         :method => method,
                         :open_timeout => 30,
