@@ -1,8 +1,9 @@
 require 'checkr'
 
 class APITest
-  def initialize(api_key)
+  def initialize(api_key: nil, bearer_token: nil)
     Checkr.api_key = api_key
+    Checkr.bearer_token = bearer_token
   end
 
   def run
@@ -24,17 +25,18 @@ class APITest
     geos = Checkr::Geo.all
     puts "Found #{geos.length} geos."
 
-    scranton = geos.select{ |g| g.name == "Scranton" }.first
+    scrantons = geos.select{ |g| g.name == "Scranton" }
+    puts "Found #{scrantons.size} scrantons"
 
-    unless scranton
-      scranton = Checkr::Geo.create({
+    if scrantons.empty?
+      scrantons << Checkr::Geo.create({
         :name => "Scranton",
         :state => "PA"
       })
     end
 
     puts "Deleting the geo for Scranton"
-    scranton.delete
+    scrantons.each(&:delete)
 
     puts "Create the Scranton geo..."
     scranton = Checkr::Geo.create({
@@ -61,7 +63,7 @@ class APITest
       :zipcode => "90401",
       :dob => "1970-01-22",
       :ssn => "543-43-4645",
-      :driver_license_number => "F211165",
+      :driver_license_number => "F2111651",
       :driver_license_state => "CA",
       :geo_ids => geos.map(&:id)
     })
@@ -95,7 +97,7 @@ class APITest
 
   def run_report_tests(candidate)
     puts "Creating a report for Candidate##{candidate.id}..."
-    report = candidate.reports.create("tasker_plus")
+    report = candidate.reports.create("tasker_standard")
     puts "Created #{report.inspect}"
 
     puts "Retrieving the created report..."
@@ -103,7 +105,7 @@ class APITest
     puts "Retrieved the report with id=#{report.id}"
 
     puts "Updating the report..."
-    report.package = "driver_plus"
+    report.package = "driver_standard"
     report.save
     puts "New package is #{report.package}"
 
