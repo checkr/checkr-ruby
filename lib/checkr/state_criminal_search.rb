@@ -10,12 +10,13 @@ module Checkr
     attribute :estimated_completion_date
     attribute :estimated_completion_time
 
-    api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
+    api_class_method :retrieve, :get, ':path/:id', arguments: [:id]
 
     def self.path
-      "/v1/state_criminal_searches"
+      '/v1/state_criminal_searches'
     end
 
-    APIClass.register_subclass(self, "state_criminal_search")
+    APIClass.register_subclass(self, 'state_criminal_search')
+
   end
 end
