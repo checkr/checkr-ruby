@@ -1,3 +1,8 @@
+## 1.6 (2019-05-20)
+
+- Add State CriminalSearch
+- Add Employment Verification
+
 ## v1.5.4 (2018-12-10)
 
 - Add ability to pass api key to individual API method calls
@@ -20,8 +25,8 @@ Fixes:
 
 Features:
 
-- Add FederalCivilSearch
-- Add FederalCriminalSearch
+- Add Federal Civil Search
+- Add Federal Criminal Search
 
 ## v1.5.0 (2018-02-2)
 
