@@ -50,6 +50,9 @@ module Checkr
     attribute :education_verification, :EducationVerification
     attribute_writer_alias :education_verification_id, :education_verification
 
+    attribute :employment_verification, :EmploymentVerification
+    attribute_writer_alias :employment_verification_id, :employment_verification
+
     api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
     api_class_method :create, :post
 

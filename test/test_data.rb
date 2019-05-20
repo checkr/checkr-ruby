@@ -530,6 +530,17 @@ module Checkr
        :records => []}
     end
 
+    def test_employment_verification
+      { id: "5cd42657682ee80028cece4c",
+        object: "employment_verification",
+        uri: "/v1/employment_verifications/5cd42657682ee80028cece4c",
+        status: "clear",
+        created_at: "2019-05-09T13:08:39Z",
+        completed_at: "2019-05-13T12:50:47Z",
+        turnaround_time: 344528,
+        records: [] }
+    end
+
     # Errors
     def test_api_error
       {
