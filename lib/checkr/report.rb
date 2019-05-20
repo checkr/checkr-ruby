@@ -29,6 +29,9 @@ module Checkr
     attribute :county_criminal_searches, APIList.constructor(:CountyCriminalSearch)
     attribute_writer_alias :county_criminal_search_ids, :county_criminal_searches
 
+    attribute :state_criminal_searches, APIList.constructor(:StateCriminalSearch)
+    attribute_writer_alias :state_criminal_search_ids, :state_criminal_searches
+
     attribute :federal_criminal_search, :FederalCriminalSearch
     attribute_writer_alias :federal_criminal_search_ids, :federal_criminal_search
 

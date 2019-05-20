@@ -380,6 +380,22 @@ module Checkr
              :disposition_date=>"2011-06-02"}]}]}
     end
 
+    def test_state_criminal_search
+      { id: "5cd4265fd46fcf0001c6b8f3",
+        object: "state_criminal_search",
+        uri: "/v1/state_criminal_searches/5cd4265fd46fcf0001c6b8f3",
+        status: "clear",
+        state: "NY",
+        created_at: "2019-05-09T13:08:47Z",
+        completed_at: "2019-05-14T19:43:32Z",
+        turnaround_time: 455685,
+        estimated_completion_time: "2019-05-09T21:40:45Z",
+        estimated_completion_date: "2019-05-10",
+        records: [],
+        filtered_by_positive_adjudication_records: []
+      }
+    end
+
     def test_invitation
       { id: '2c8447d8c35761ad8f70d9d3',
         status: 'pending',
