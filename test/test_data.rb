@@ -513,6 +513,7 @@ module Checkr
        :type=>"driver_license",
        :content_type=>"image/jpeg"}
     end
+
     def test_document_list
       {
         :object => 'list',
@@ -528,10 +529,51 @@ module Checkr
        :verification_url=>"http://verifications.checkr.com/db313e73383710d4fa2f18fd",
        :completed_at=>nil}
     end
+
     def test_verification_list
       {
         :object => 'list',
         :data => [test_verification, test_verification, test_verification],
+      }
+    end
+
+    def test_adverse_item
+      {
+        :id => '71c0c2c79349c9f899bda22d3ccf60b7e0469266',
+        :object => 'adverse_item',
+        :text => 'License status: Suspended',
+      }
+    end
+
+    def test_adverse_item_list
+      {
+        :object => 'list',
+        :count => 2,
+        :data => [test_adverse_item, test_adverse_item],
+      }
+    end
+
+    def test_adverse_action
+      {
+        :id => '5d0af2cdfccff00034be49e9',
+        :object => 'test_adverse_action',
+        :uri => '/v1/adverse_actions/5d0af2cdfccff00034be49e9',
+        :created_at => '2019-06-20T02:43:25Z',
+        :status => 'pending',
+        :report_id => 'd36abda710bde8fd2c9d2587',
+        :post_notice_scheduled_at => '2019-06-27T02:43:25Z',
+        :post_notice_ready_at => '2019-06-27T02:43:25Z',
+        :canceled_at => nil,
+        :individualized_assessment_engaged => false,
+        :adverse_items => test_adverse_item_list,
+      }
+    end
+
+    def test_adverse_action_list
+      {
+        :object => 'list',
+        :count => 2,
+        :data => [test_adverse_action, test_adverse_action],
       }
     end
 
