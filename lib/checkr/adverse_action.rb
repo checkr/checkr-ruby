@@ -7,7 +7,6 @@ module Checkr
     attribute :canceled_at
     attribute :individualized_assessment_engaged
     attribute :adverse_items, APIList.constructor(:AdverseItem)
-    attribute_writer_alias :adverse_item_ids, :adverse_items
 
     api_class_method :all, :get, :constructor => APIList.constructor(:AdverseAction)
     api_class_method :create, :post, '/v1/reports/:report_id/adverse_actions'
