@@ -34,21 +34,6 @@ module Checkr
       end
     end
 
-    context '.all' do
-      should 'return list of AdverseAction instances' do
-        @mock.expects(:get).once.with(@adverse_action_url, anything, anything)
-            .returns(test_response(test_adverse_action_list))
-
-        adverse_actions = AdverseAction.all
-
-        assert(adverse_actions.is_a?(APIList))
-        assert(adverse_actions.length > 0)
-        adverse_actions.each do |adverse_action|
-          assert(adverse_action.is_a?(AdverseAction))
-        end
-      end
-    end
-
     context '.create' do
       setup do
         @report = Report.construct(test_report)
