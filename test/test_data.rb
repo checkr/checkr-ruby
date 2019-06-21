@@ -556,7 +556,7 @@ module Checkr
     def test_adverse_action
       {
         :id => '5d0af2cdfccff00034be49e9',
-        :object => 'test_adverse_action',
+        :object => 'adverse_action',
         :uri => '/v1/adverse_actions/5d0af2cdfccff00034be49e9',
         :created_at => '2019-06-20T02:43:25Z',
         :status => 'pending',
