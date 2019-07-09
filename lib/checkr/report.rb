@@ -11,7 +11,8 @@ module Checkr
     attribute :candidate, :Candidate
     attribute_writer_alias :candidate_id, :candidate
 
-    attribute :adverse_items, APIList.constructor(:AdverseItem)
+    attribute :adverse_items, :AdverseItemList, :nested => true, :default => {}
+    attribute_writer_alias :adverse_item_ids, :adverse_items
 
     attribute :ssn_trace, :SSNTrace
     attribute_writer_alias :ssn_trace_id, :ssn_trace
