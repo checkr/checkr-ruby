@@ -33,7 +33,7 @@ module Checkr
 
         adverse_items = AdverseItem.all({ :report_id => @report.id })
 
-        assert(adverse_items.is_a?(APIList))
+        assert(adverse_items.is_a?(AdverseItemList))
         assert(adverse_items.length > 0)
         adverse_items.each do |adverse_item|
           assert(adverse_item.is_a?(AdverseItem))
