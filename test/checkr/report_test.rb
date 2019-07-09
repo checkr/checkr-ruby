@@ -7,7 +7,7 @@ module Checkr
     end
 
     context 'Report class' do
-      should 'be retrieveable ' do
+      should 'be retrieveable' do
         id = "report_id"
         @mock.expects(:get).once.with("#{@report_url}/#{id}", anything, anything).returns(test_response(test_report))
         report = Report.retrieve(id)
