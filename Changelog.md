@@ -1,6 +1,13 @@
+## 1.6.1 (2019-07-16)
+
+Features:
+
+- Add Adverse Action resource
+- Add Adverse Item resource
+
 ## 1.6 (2019-05-20)
 
-- Add State CriminalSearch
+- Add State Criminal Search
 - Add Employment Verification
 
 ## v1.5.4 (2018-12-10)
