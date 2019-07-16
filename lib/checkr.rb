@@ -18,6 +18,9 @@ require 'checkr/api_list'
 require 'checkr/util'
 
 # Requires for classes
+require 'checkr/adverse_action'
+require 'checkr/adverse_item'
+require 'checkr/adverse_item_list'
 require 'checkr/candidate'
 require 'checkr/county_criminal_search'
 require 'checkr/document'
