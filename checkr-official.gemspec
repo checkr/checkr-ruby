@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency('shoulda', '~> 3.4.0')
   s.add_development_dependency('activesupport', '~> 4.2.6')
   s.add_development_dependency('bump', '0.5.2')
-  s.add_development_dependency('rake', '10.4.2')
+  s.add_development_dependency('rake', '12.3.3')
   s.add_development_dependency('test-unit')
 
   s.files = `git ls-files`.split("\n")
