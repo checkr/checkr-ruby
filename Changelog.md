@@ -1,3 +1,6 @@
+## 1.7.1 (2021-08-31)
+* Remove usage of deprecated `URI.escape`  
+
 ## 1.6.1 (2019-07-16)
 
 Features:
