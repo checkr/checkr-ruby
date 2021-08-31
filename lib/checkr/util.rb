@@ -1,3 +1,5 @@
+require 'erb'
+
 module Checkr
   module Util
 
@@ -38,7 +40,7 @@ module Checkr
     end
 
     def self.escape(val)
-      URI.escape(val.to_s, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+      ERB::Util.url_encode(val.to_s)
     end
 
     def self.symbolize_keys(obj)
