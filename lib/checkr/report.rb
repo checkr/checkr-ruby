@@ -2,6 +2,8 @@ module Checkr
   class Report < APIResource
 
     attribute :status
+    attribute :result
+    attribute :includes_canceled
     attribute :adjudication
     attribute :values
     attribute :completed_at
