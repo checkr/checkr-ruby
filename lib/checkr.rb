@@ -77,7 +77,8 @@ module Checkr
 
     if [:get, :head, :delete].include?(method.to_s.downcase.to_sym)
       unless params.empty?
-        url += URI.parse(url).query ? '&' : '?' + Util.query_string(params)
+        url += URI.parse(url).query ? '&' : '?'
+        url += Util.query_string(params)
       end
       params = nil
     end
