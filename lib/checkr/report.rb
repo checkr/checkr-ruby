@@ -2,6 +2,8 @@ module Checkr
   class Report < APIResource
 
     attribute :status
+    attribute :result
+    attribute :includes_canceled
     attribute :adjudication
     attribute :values
     attribute :completed_at
@@ -11,7 +13,7 @@ module Checkr
     attribute :candidate, :Candidate
     attribute_writer_alias :candidate_id, :candidate
 
-    attribute :adverse_items, :AdverseItemList, :nested => true, :default => {}
+    attribute :adverse_items, :AdverseItemList, nested: true, default: {}
     attribute_writer_alias :adverse_item_ids, :adverse_items
 
     attribute :ssn_trace, :SSNTrace
@@ -47,10 +49,10 @@ module Checkr
     attribute :documents, APIList.constructor(:Document)
     attribute_writer_alias :document_ids, :documents
 
-    attribute :geos, APIList.constructor(:Geo), :default => {}
+    attribute :geos, APIList.constructor(:Geo), default: {}
     attribute_writer_alias :geo_ids, :geos
 
-    attribute :verifications, :VerificationList, :nested => true, :default => {}
+    attribute :verifications, :VerificationList, nested: true, default: {}
     attribute_writer_alias :verification_ids, :verifications
 
     attribute :education_verification, :EducationVerification
@@ -59,15 +61,16 @@ module Checkr
     attribute :employment_verification, :EmploymentVerification
     attribute_writer_alias :employment_verification_id, :employment_verification
 
-    api_class_method :retrieve, :get, ":path/:id", :arguments => [:id]
+    api_class_method :retrieve, :get, ':path/:id', arguments: [:id]
     api_class_method :create, :post
 
-    api_instance_method :save, :post, :default_params => :changed_attributes
+    api_instance_method :save, :post, default_params: :changed_attributes
 
     def self.path
-      "/v1/reports"
+      '/v1/reports'
     end
 
-    APIClass.register_subclass(self, "report")
+    APIClass.register_subclass(self, 'report')
+
   end
 end
