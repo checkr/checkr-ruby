@@ -47,6 +47,18 @@ module Checkr
         assert_equal(test_sex_offender_search[:status], @sex_offender_search.status)
       end
 
+      should 'have the result attribute' do
+        assert_equal(test_sex_offender_search[:result], @sex_offender_search.result)
+      end
+
+      should 'have the cancellation_reason attribute' do
+        assert_equal(test_sex_offender_search[:cancellation_reason], @sex_offender_search.cancellation_reason)
+      end
+
+      should 'have the cancellation_reason_description attribute' do
+        assert_equal(test_sex_offender_search[:cancellation_reason_description], @sex_offender_search.cancellation_reason_description)
+      end
+
       should 'have the created_at attribute' do
         assert_equal(test_sex_offender_search[:created_at], @sex_offender_search.created_at)
       end

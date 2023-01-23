@@ -51,6 +51,22 @@ module Checkr
         assert_equal(test_employment_verification[:status], @employment_verification.status)
       end
 
+      should 'have the result attribute' do
+        assert_equal(test_employment_verification[:result], @employment_verification.result)
+      end
+
+      should 'have the cancellation_reason attribute' do
+        assert_equal(test_employment_verification[:cancellation_reason], @employment_verification.cancellation_reason)
+      end
+
+      should 'have the cancellation_reason_description attribute' do
+        assert_equal(test_employment_verification[:cancellation_reason_description], @employment_verification.cancellation_reason_description)
+      end
+
+      should 'have the includes_canceled attribute' do
+        assert_equal(test_employment_verification[:includes_canceled], @employment_verification.includes_canceled)
+      end
+
       should 'have the created_at attribute' do
         assert_equal(test_employment_verification[:created_at],
                      @employment_verification.created_at)

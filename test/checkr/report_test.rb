@@ -67,6 +67,14 @@ module Checkr
         assert_equal(test_report[:status], @report.status)
       end
 
+      should 'have the result attribute' do
+        assert_equal(test_report[:result], @report.result)
+      end
+
+      should 'have the includes_canceled attribute' do
+        assert_equal(test_report[:includes_canceled], @report.includes_canceled)
+      end
+
       should 'have the adjudication attribute' do
         assert_equal(test_report[:adjudication], @report.adjudication)
       end

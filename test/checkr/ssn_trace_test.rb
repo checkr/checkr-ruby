@@ -47,6 +47,18 @@ module Checkr
         assert_equal(test_ssn_trace[:status], @ssn_trace.status)
       end
 
+      should 'have the result attribute' do
+        assert_equal(test_ssn_trace[:result], @ssn_trace.result)
+      end
+
+      should 'have the cancellation_reason attribute' do
+        assert_equal(test_ssn_trace[:cancellation_reason], @ssn_trace.cancellation_reason)
+      end
+
+      should 'have the cancellation_reason_description attribute' do
+        assert_equal(test_ssn_trace[:cancellation_reason_description], @ssn_trace.cancellation_reason_description)
+      end
+
       should 'have the created_at attribute' do
         assert_equal(test_ssn_trace[:created_at], @ssn_trace.created_at)
       end

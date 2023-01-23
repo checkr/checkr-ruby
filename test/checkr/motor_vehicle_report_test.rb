@@ -47,6 +47,18 @@ module Checkr
         assert_equal(test_motor_vehicle_report[:status], @motor_vehicle_report.status)
       end
 
+      should 'have the result attribute' do
+        assert_equal(test_motor_vehicle_report[:result], @motor_vehicle_report.result)
+      end
+
+      should 'have the cancellation_reason attribute' do
+        assert_equal(test_motor_vehicle_report[:cancellation_reason], @motor_vehicle_report.cancellation_reason)
+      end
+
+      should 'have the cancellation_reason_description attribute' do
+        assert_equal(test_motor_vehicle_report[:cancellation_reason_description], @motor_vehicle_report.cancellation_reason_description)
+      end
+
       should 'have the created_at attribute' do
         assert_equal(test_motor_vehicle_report[:created_at], @motor_vehicle_report.created_at)
       end

@@ -51,6 +51,22 @@ module Checkr
         assert_equal(test_education_verification[:status], @education_verification.status)
       end
 
+      should 'have the result attribute' do
+        assert_equal(test_education_verification[:result], @education_verification.result)
+      end
+
+      should 'have the cancellation_reason attribute' do
+        assert_equal(test_education_verification[:cancellation_reason], @education_verification.cancellation_reason)
+      end
+
+      should 'have the cancellation_reason_description attribute' do
+        assert_equal(test_education_verification[:cancellation_reason_description], @education_verification.cancellation_reason_description)
+      end
+
+      should 'have the includes_canceled attribute' do
+        assert_equal(test_education_verification[:includes_canceled], @education_verification.includes_canceled)
+      end
+
       should 'have the created_at attribute' do
         assert_equal(test_education_verification[:created_at],
                      @education_verification.created_at)
