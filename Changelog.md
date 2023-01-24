@@ -1,4 +1,4 @@
-## 1.7.2 (2023-01-24)
+## 1.8.1 (2023-01-24)
 
 - Add support for the Report Lifecycle
 
