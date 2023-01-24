@@ -2,6 +2,9 @@ module Checkr
   class MotorVehicleReport < APIResource
 
     attribute :status
+    attribute :result
+    attribute :cancellation_reason
+    attribute :cancellation_reason_description
     attribute :completed_at
     attribute :turnaround_time
     attribute :full_name
