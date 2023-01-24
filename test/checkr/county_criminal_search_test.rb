@@ -47,6 +47,18 @@ module Checkr
         assert_equal(test_county_criminal_search[:status], @county_criminal_search.status)
       end
 
+      should 'have the result attribute' do
+        assert_equal(test_county_criminal_search[:result], @county_criminal_search.result)
+      end
+
+      should 'have the cancellation_reason attribute' do
+        assert_equal(test_county_criminal_search[:cancellation_reason], @county_criminal_search.cancellation_reason)
+      end
+
+      should 'have the cancellation_reason_description attribute' do
+        assert_equal(test_county_criminal_search[:cancellation_reason_description], @county_criminal_search.cancellation_reason_description)
+      end
+
       should 'have the created_at attribute' do
         assert_equal(test_county_criminal_search[:created_at], @county_criminal_search.created_at)
       end
@@ -71,6 +83,26 @@ module Checkr
         assert_equal(test_county_criminal_search[:records], @county_criminal_search.records)
       end
 
+    end
+
+    context 'have cancellation reasons' do
+      setup do
+        @mock.expects(:get).once.returns(test_response(test_county_criminal_search.merge(
+          {
+            status: 'canceled',
+            result: nil,
+            cancellation_reason: 'complete_now_customer_requested',
+            cancellation_reason_description: 'Customer requested Complete Now prior to screening completion',
+          })))
+        @county_criminal_search = CountyCriminalSearch.retrieve('county_criminal_search_id')
+      end
+
+      should 'have the correct attribute' do
+        assert_equal(@county_criminal_search.status, 'canceled')
+        assert_equal(@county_criminal_search.result, nil)
+        assert_equal(@county_criminal_search.cancellation_reason, 'complete_now_customer_requested')
+        assert_equal(@county_criminal_search.cancellation_reason_description, 'Customer requested Complete Now prior to screening completion')
+      end
     end
 
     should 'be registered' do

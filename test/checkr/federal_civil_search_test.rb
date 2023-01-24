@@ -47,6 +47,18 @@ module Checkr
         assert_equal(test_federal_civil_search[:status], @federal_civil_search.status)
       end
 
+      should 'have the result attribute' do
+        assert_equal(test_federal_civil_search[:result], @federal_civil_search.result)
+      end
+
+      should 'have the cancellation_reason attribute' do
+        assert_equal(test_federal_civil_search[:cancellation_reason], @federal_civil_search.cancellation_reason)
+      end
+
+      should 'have the cancellation_reason_description attribute' do
+        assert_equal(test_federal_civil_search[:cancellation_reason_description], @federal_civil_search.cancellation_reason_description)
+      end
+
       should 'have the created_at attribute' do
         assert_equal(test_federal_civil_search[:created_at], @federal_civil_search.created_at)
       end

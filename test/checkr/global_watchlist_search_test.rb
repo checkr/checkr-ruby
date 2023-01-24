@@ -47,6 +47,18 @@ module Checkr
         assert_equal(test_global_watchlist_search[:status], @global_watchlist_search.status)
       end
 
+      should 'have the result attribute' do
+        assert_equal(test_global_watchlist_search[:result], @global_watchlist_search.result)
+      end
+
+      should 'have the cancellation_reason attribute' do
+        assert_equal(test_global_watchlist_search[:cancellation_reason], @global_watchlist_search.cancellation_reason)
+      end
+
+      should 'have the cancellation_reason_description attribute' do
+        assert_equal(test_global_watchlist_search[:cancellation_reason_description], @global_watchlist_search.cancellation_reason_description)
+      end
+
       should 'have the created_at attribute' do
         assert_equal(test_global_watchlist_search[:created_at], @global_watchlist_search.created_at)
       end

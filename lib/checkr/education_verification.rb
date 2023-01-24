@@ -2,6 +2,10 @@ module Checkr
   class EducationVerification < APIResource
 
     attribute :status
+    attribute :result
+    attribute :cancellation_reason
+    attribute :cancellation_reason_description
+    attribute :includes_canceled
     attribute :completed_at
     attribute :turnaround_time
     attribute :records

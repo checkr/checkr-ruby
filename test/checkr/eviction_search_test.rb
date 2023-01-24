@@ -47,6 +47,18 @@ module Checkr
         assert_equal(test_eviction_search[:status], @eviction_search.status)
       end
 
+      should 'have the result attribute' do
+        assert_equal(test_eviction_search[:result], @eviction_search.result)
+      end
+
+      should 'have the cancellation_reason attribute' do
+        assert_equal(test_eviction_search[:cancellation_reason], @eviction_search.cancellation_reason)
+      end
+
+      should 'have the cancellation_reason_description attribute' do
+        assert_equal(test_eviction_search[:cancellation_reason_description], @eviction_search.cancellation_reason_description)
+      end
+
       should 'have the created_at attribute' do
         assert_equal(test_eviction_search[:created_at], @eviction_search.created_at)
       end
