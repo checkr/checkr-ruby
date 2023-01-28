@@ -10,8 +10,8 @@ module Checkr
     attribute :turnaround_time
     attribute :package
     attribute :values
+    attribute :candidate_id
     attribute :candidate, :Candidate
-    attribute_writer_alias :candidate_id, :candidate
 
     attribute :adverse_items, :AdverseItemList, nested: true, default: {}
     attribute_writer_alias :adverse_item_ids, :adverse_items
